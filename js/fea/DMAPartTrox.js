@@ -15,8 +15,7 @@
         tetraTrox.computeBoundingBox();
         var unitScale = 1/3.25;
         tetraTrox.applyMatrix(new THREE.Matrix4().makeScale(unitScale, unitScale, unitScale));
-//        tetraTrox.applyMatrix(new THREE.Matrix4().makeTranslation(0.25,-0.6, -0.45));
-//        tetraTrox.applyMatrix(new THREE.Matrix4().makeRotationZ(-Math.PI/6));
+        tetraTrox.applyMatrix(new THREE.Matrix4().makeRotationZ(Math.PI));
     });
 
     function DMATetraTroxPart(type, parent){
@@ -25,7 +24,6 @@
     DMATetraTroxPart.prototype = Object.create(DMAPart.prototype);
 
     DMATetraTroxPart.prototype._makeMeshForType = function(){
-        console.log("mesh");
         var mesh = new THREE.Mesh(tetraTrox, partMaterial);
         mesh.myPart = this;//need a ref back to this part
         return mesh;

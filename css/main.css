@@ -250,7 +250,8 @@ input.numberInput{
 
 #navRibbon{
     height: 49px;
-    width: 270px;
+    width: 100%;
+    text-align:center;
     z-index: 1;
     display: block;
     position: absolute;

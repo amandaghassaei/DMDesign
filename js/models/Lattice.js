@@ -23,6 +23,7 @@ Lattice = Backbone.Model.extend({
         cellSeparation: {xy:0, z:0},
 
         cellType: "octa",
+        freeformCellType: "tetra",
         connectionType: "freeformFace",
         partType: "trox"
     },

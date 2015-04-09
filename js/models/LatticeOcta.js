@@ -76,7 +76,7 @@ OctaLatticeSubclasses = {
             this.set("basePlane", new OctaBasePlane({scale:this.get("scale")}));
             this.set("highlighter", new OctaFreeFormHighlighter({scale:this.get("scale")}));
 
-            this.set("freeformCellType", "octa");
+//            this.set("freeformCellType", "octa");
 
         },
 

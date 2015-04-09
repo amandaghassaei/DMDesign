@@ -20,8 +20,7 @@ $(function(){
     dmaGlobals.appState.delayedInit();
 
     //ui
-    new NavBar({model:dmaGlobals.appState});
-    new Ribbon({model:dmaGlobals.appState});
+    new TroxUI({model:dmaGlobals.appState});
 
     //threeJS View
     new ThreeView({model:dmaGlobals.three, appState:dmaGlobals.appState});
