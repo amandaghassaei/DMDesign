@@ -6,6 +6,8 @@
 var partMaterial = new THREE.MeshLambertMaterial({ color:0xffffff, shading: THREE.FlatShading });
     partMaterial.color.setRGB( 0.9619657144369509, 0.6625466032079207, 0.20799727886007258 );
 
+//var partMaterial = new THREE.MeshNormalMaterial();
+
 //a part, element with a single material, handled by assembler
 
     function DMAPart(type, parent) {

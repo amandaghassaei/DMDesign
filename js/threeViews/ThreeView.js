@@ -16,7 +16,6 @@ ThreeView = Backbone.View.extend({
     //intersections/object highlighting
     mouseProjection: new THREE.Raycaster(),
     highlighter: null,
-    currentIntersectedPart: null,
 
     el: "#threeContainer",
 
@@ -63,21 +62,11 @@ ThreeView = Backbone.View.extend({
 
     _mouseOut: function(){
         this.highlighter.setNothingHighlighted();
-        this._setNoPartIntersections();
     },
 
     _mouseUp: function(){
         this.mouseIsDown = false;
-        if (dmaGlobals.appState.get("currentTab") == "cam" && dmaGlobals.appState.get("manualSelectOrigin")){
-            var position = this.highlighter.getHighlightedObjectPosition();
-            if (position){
-                dmaGlobals.assembler.set("originPosition", position);
-                dmaGlobals.appState.set("manualSelectOrigin", false);
-                return;
-            }
-        }
-        if (this.currentIntersectedPart) this.currentIntersectedPart.removeFromCell();
-        else this.highlighter.addRemoveVoxel(!this.appState.get("deleteMode"));
+        this.highlighter.addRemoveVoxel(!this.appState.get("deleteMode"));
     },
 
     _mouseDown: function(){
@@ -90,7 +79,6 @@ ThreeView = Backbone.View.extend({
 
         if (this.mouseIsDown && !this.controls.noRotate) {//in the middle of a camera move
             this.highlighter.setNothingHighlighted();
-            this._setNoPartIntersections();
             return;
         }
 
@@ -103,7 +91,6 @@ ThreeView = Backbone.View.extend({
         var intersections = this.mouseProjection.intersectObjects(objsToIntersect, false);
         if (intersections.length == 0) {//no intersections
             this.highlighter.setNothingHighlighted();
-            this._setNoPartIntersections();
             return;
         }
 
@@ -118,15 +105,6 @@ ThreeView = Backbone.View.extend({
                 this.highlighter.addRemoveVoxel(true);
             }
         }
-
-        if (this.appState.get("cellMode") == "part"){//additionally check for part intersections in part mode
-            var partIntersections = this.mouseProjection.intersectObjects(this.model.parts, false);
-            if (partIntersections.length == 0) {
-                this._setNoPartIntersections();
-                return;
-            }
-            this._handlePartIntersections(partIntersections, intersections[0].distance);
-        }
     },
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -135,29 +113,6 @@ ThreeView = Backbone.View.extend({
 
     _saveHighlighter: function(){
         this.highlighter = dmaGlobals.lattice.get("highlighter");
-    },
-
-    _setNoPartIntersections: function(){
-        if (this.currentIntersectedPart){
-            this.currentIntersectedPart.unhighlight();
-            this.currentIntersectedPart = null;
-            dmaGlobals.three.render();
-        }
-    },
-
-    _handlePartIntersections: function(intersections, distanceToNearestCell){
-        var part = intersections[0].object.myPart;
-        if (this.highlighter.isVisible() && intersections[0].distance > distanceToNearestCell){
-            this._setNoPartIntersections();
-            return;
-        }
-        this.highlighter.hide();
-        if (part!= this.currentIntersectedPart){
-            if (this.currentIntersectedPart) this.currentIntersectedPart.unhighlight();
-            part.highlight();
-            this.currentIntersectedPart = part;
-            dmaGlobals.three.render();
-        }
     }
 
 });
