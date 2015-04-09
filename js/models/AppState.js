@@ -167,7 +167,7 @@ AppState = Backbone.Model.extend({
     },
 
     delayedInit: function(){
-        this.set("menuWrapper", new MenuWrapper({model: this}));
+//        this.set("menuWrapper", new MenuWrapper({model: this}));
     },
 
     isMobile: function() {

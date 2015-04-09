@@ -23,8 +23,8 @@ Lattice = Backbone.Model.extend({
         cellSeparation: {xy:0, z:0},
 
         cellType: "octa",
-        connectionType: "face",
-        partType: "triangle"
+        connectionType: "freeformFace",
+        partType: "trox"
     },
 
     //pass in fillGeometry
