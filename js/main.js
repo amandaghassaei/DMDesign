@@ -16,7 +16,7 @@ $(function(){
     dmaGlobals.appState = new AppState();
     dmaGlobals.lattice = new Lattice({appState: dmaGlobals.appState});
     dmaGlobals.lattice.delayedInit();
-    dmaGlobals.assembler = new Assembler({appState: dmaGlobals.appState, lattice:dmaGlobals.lattice});
+//    dmaGlobals.assembler = new Assembler({appState: dmaGlobals.appState, lattice:dmaGlobals.lattice});
     dmaGlobals.appState.delayedInit();
 
     //ui

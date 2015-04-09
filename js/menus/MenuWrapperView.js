@@ -19,17 +19,17 @@ MenuWrapper = Backbone.View.extend({
 
         //init all tab view controllers
         this.latticeMenu = new LatticeMenuView({model:this.model, lattice:lattice});
-        this.importMenu = new ImportMenuView({model:this.model});
-        this.sketchMenu = new SketchMenuView({model:lattice, appState:this.model});
-        this.partMenu = new PartMenuView({model:this.model, lattice:lattice});
-        this.scriptMenu = new ScriptMenuView({model:this.model});
-        this.physicsMenu = new PhysicsMenuView({model:this.model});
-        this.materialMenu = new MaterialMenuView({model:this.model});
-        this.optimizeMenu = new OptimizationMenuView({model:this.model});
-        this.assemblerMenu = new AssemblerMenuView({model:this.model, assembler: dmaGlobals.assembler});
-        this.animationMenu = new AnimationMenuView({model:this.model});
-        this.camMenu = new CamMenuView({model:this.model, lattice:lattice, assembler:dmaGlobals.assembler});
-        this.sendMenu = new SendMenuView({model:this.model});
+//        this.importMenu = new ImportMenuView({model:this.model});
+//        this.sketchMenu = new SketchMenuView({model:lattice, appState:this.model});
+//        this.partMenu = new PartMenuView({model:this.model, lattice:lattice});
+//        this.scriptMenu = new ScriptMenuView({model:this.model});
+//        this.physicsMenu = new PhysicsMenuView({model:this.model});
+//        this.materialMenu = new MaterialMenuView({model:this.model});
+//        this.optimizeMenu = new OptimizationMenuView({model:this.model});
+//        this.assemblerMenu = new AssemblerMenuView({model:this.model, assembler: dmaGlobals.assembler});
+//        this.animationMenu = new AnimationMenuView({model:this.model});
+//        this.camMenu = new CamMenuView({model:this.model, lattice:lattice, assembler:dmaGlobals.assembler});
+//        this.sendMenu = new SendMenuView({model:this.model});
 
         //bind events
         this.listenTo(this.model, "change:currentNav", this.render);
@@ -59,28 +59,28 @@ MenuWrapper = Backbone.View.extend({
 
         if (tabName == "lattice"){
             this.latticeMenu.render();
-        } else if (tabName == "import"){
-            this.importMenu.render();
-        } else if (tabName == "sketch"){
-            this.sketchMenu.render();
-        } else if (tabName == "part"){
-            this.partMenu.render();
-        } else if (tabName == "script"){
-            this.scriptMenu.render();
-        } else if (tabName == "physics"){
-            this.physicsMenu.render();
-        } else if (tabName == "material"){
-            this.materialMenu.render();
-        } else if (tabName == "optimize"){
-            this.optimizeMenu.render();
-        } else if (tabName == "assembler"){
-            this.assemblerMenu.render();
-        } else if (tabName == "animate"){
-            this.animationMenu.render();
-        } else if (tabName == "cam"){
-            this.camMenu.render();
-        } else if (tabName == "send"){
-            this.sendMenu.render();
+//        } else if (tabName == "import"){
+//            this.importMenu.render();
+//        } else if (tabName == "sketch"){
+//            this.sketchMenu.render();
+//        } else if (tabName == "part"){
+//            this.partMenu.render();
+//        } else if (tabName == "script"){
+//            this.scriptMenu.render();
+//        } else if (tabName == "physics"){
+//            this.physicsMenu.render();
+//        } else if (tabName == "material"){
+//            this.materialMenu.render();
+//        } else if (tabName == "optimize"){
+//            this.optimizeMenu.render();
+//        } else if (tabName == "assembler"){
+//            this.assemblerMenu.render();
+//        } else if (tabName == "animate"){
+//            this.animationMenu.render();
+//        } else if (tabName == "cam"){
+//            this.camMenu.render();
+//        } else if (tabName == "send"){
+//            this.sendMenu.render();
         } else {
             console.warn("no tab initialized!");
             $("#menuContent").html('Coming Soon.');//clear out content from menu
