@@ -21,6 +21,7 @@ $(function(){
 
     //ui
     new TroxUI({model:dmaGlobals.appState});
+    new TroxHeader();
 
     //threeJS View
     new ThreeView({model:dmaGlobals.three, appState:dmaGlobals.appState});

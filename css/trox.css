@@ -8,11 +8,15 @@
     z-index: 1;
 }
 
-#troxLogo{
+#troxCBALogo{
     width: 60px;
     margin: 15px;
 }
 
-.troxCellSelected {
+.troxCellButton.selected {
+    background-color: black;
+}
+
+#troxDeleteButton.selected {
     background-color: black;
 }

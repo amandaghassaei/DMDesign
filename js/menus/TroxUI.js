@@ -8,8 +8,8 @@ TroxUI = Backbone.View.extend({
     el: "#navRibbon",
 
     events: {
-        "click .troxCellButton":                                    "_selectCellType",
-        "click .deleteMode":                                     "_updateDeleteMode",
+        "click .troxCellButton":                                       "_selectCellType",
+        "click #troxDeleteButton":                                     "_updateDeleteMode"
     },
 
     initialize: function(){
@@ -36,7 +36,7 @@ TroxUI = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(_.extend(dmaGlobals.lattice.toJSON(), this.model.toJSON())));
         var cellType = dmaGlobals.lattice.get("freeformCellType");
-        this.$el.find("[data-type='" + cellType + "']").addClass("troxCellSelected");
+        this.$el.find("[data-type='" + cellType + "']").addClass("selected");
     },
 
     template: _.template('\
@@ -44,7 +44,7 @@ TroxUI = Backbone.View.extend({
               <a data-type="tetra" class="btn btn-primary troxCellButton" href="#">tetra</a>\
               <a data-type="octa" class="btn btn-primary troxCellButton" href="#">octa</a>\
               <a data-type="icosa" class="btn btn-primary troxCellButton" href="#">icosa</a>\
-              <a class="btn btn-primary <% if (deleteMode){ %> troxSelected<% } %>"><span class="fui-cross"></span></a>\
+              <a id="troxDeleteButton" class="btn btn-primary <% if (deleteMode){ %> selected<% } %>"><span class="fui-cross"></span></a>\
               <a class="btn btn-primary">Reset</a>\
         </div>\
         ')
