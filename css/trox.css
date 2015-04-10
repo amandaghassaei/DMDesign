@@ -34,6 +34,10 @@ body{
     margin: 0 22px;
 }
 
+.troxHighlight{
+    display:none;
+}
+
 #troxDeleteButton>img{
     height:104px;
     margin: 0 23px;

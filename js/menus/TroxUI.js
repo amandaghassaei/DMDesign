@@ -37,32 +37,41 @@ TroxUI = Backbone.View.extend({
 
     _showAboutModal: function(e){
         e.preventDefault();
-
+        $("#aboutTroxModal").modal('show');
     },
 
     _showResetModal: function(e){
         e.preventDefault();
-        
+        $("#resetTroxModal").modal('show');
     },
 
     render: function(){
-        this.$el.html(this.template(_.extend(dmaGlobals.lattice.toJSON(), this.model.toJSON())));
+        this.$el.html(this.template());
+        var cellType = dmaGlobals.lattice.get("freeformCellType");
+        var highlighted = this.$el.find("[data-type='" + cellType + "']");
+        highlighted.children(".troxHighlight").show();
+        highlighted.children(".troxNoHighlight").hide();
+        if (this.model.get("deleteMode")){
+            var deleteButton = $("#troxDeleteButton");
+            deleteButton.children(".troxHighlight").show();
+            deleteButton.children(".troxNoHighlight").hide();
+        }
     },
 
     template: _.template('\
         <div class="btn-toolbar">\
               <a data-type="tetra" class="troxCellButton" href="#">\
-                <% if (freeformCellType == "tetra") { %><img src="assets/imgs/trox_highlighted_07.png">\
-                <% } else { %><img src="assets/imgs/trox_assets_07.png"><% } %></a>\
+                <img class="troxHighlight" src="assets/imgs/trox_highlighted_07.png">\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_07.png"></a>\
               <a data-type="octa" class="troxCellButton" href="#">\
-                <% if (freeformCellType == "octa") { %><img src="assets/imgs/trox_highlighted_09.png">\
-                <% } else { %><img src="assets/imgs/trox_assets_09.png"><% } %></a>\
+                <img class="troxHighlight" src="assets/imgs/trox_highlighted_09.png">\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_09.png"></a>\
               <a data-type="icosa" class="troxCellButton" href="#">\
-                <% if (freeformCellType == "icosa") { %><img src="assets/imgs/trox_highlighted_11.png">\
-                <% } else { %><img src="assets/imgs/trox_assets_11.png"><% } %></a>\
-              <a id="troxDeleteButton">\
-                <% if (deleteMode) { %><img src="assets/imgs/trox_highlighted_13.png">\
-                <% } else { %><img src="assets/imgs/trox_assets_13.png"><% } %></a>\
+                <img class="troxHighlight" src="assets/imgs/trox_highlighted_11.png">\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_11.png"></a>\
+              <a id="troxDeleteButton" href="#">\
+                <img class="troxHighlight" src="assets/imgs/trox_highlighted_13.png">\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_13.png"></a>\
         </div>\
         <div id="troxFooter">\
             <a class="aboutTrox pull-left" href="#"><img class="troxLogo" src="assets/imgs/trox_assets_15.png"></a>\
