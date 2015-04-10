@@ -1,4 +1,20 @@
+#template{
+    position: absolute;
+    bottom:0;
+}
 
+body{
+    font-family: "Hanken-Light", Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Hanken-Book";
+  src: url(../assets/fonts/Hanken-Book.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Hanken-Light";
+  src: url(../assets/fonts/Hanken-Light.ttf) format("truetype");
+}
 
 #troxHeader {
     position: absolute;
@@ -8,19 +24,55 @@
     z-index: 1;
 }
 
-#troxLogo{
-    margin: 15px;
+#troxMainLogo{
+    margin: 23px;
     width:45px;
 }
 
 .troxCellButton>img{
-    width:104px;
+    height:104px;
+    margin: 0 22px;
 }
 
 #troxDeleteButton>img{
-    width:104px;
+    height:104px;
+    margin: 0 23px;
 }
 
 #navRibbon {
-    height:200px;
+    height:146px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1.0;
+}
+
+#troxFooter{
+    background-color:#1f1f1f;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:87px;
+    font-size: 36px;
+}
+
+.btn-toolbar{
+    z-index: 1;
+    position: relative;
+    padding-left: 44px;
+}
+
+#troxReset{
+    float: right;
+    margin-top: 17px;
+    margin-right: 45px;
+    color:white;
+}
+
+.troxLogo{
+    height:86px;
+}
+
+#threeContainer{
+    /*display:none;*/
 }
