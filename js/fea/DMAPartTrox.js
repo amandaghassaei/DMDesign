@@ -19,7 +19,7 @@
         map: skin,
         bumpMap:texture,
         color: new THREE.Color("#999999"),
-        bumpScale:0.1,
+        bumpScale:0.2,
         shininess:10,
         fog: false,
         shading:THREE.SmoothShading
