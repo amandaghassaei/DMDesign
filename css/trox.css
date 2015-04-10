@@ -8,15 +8,19 @@
     z-index: 1;
 }
 
-#troxCBALogo{
-    width: 60px;
+#troxLogo{
     margin: 15px;
+    width:45px;
 }
 
-.troxCellButton.selected {
-    background-color: black;
+.troxCellButton>img{
+    width:104px;
 }
 
-#troxDeleteButton.selected {
-    background-color: black;
+#troxDeleteButton>img{
+    width:104px;
+}
+
+#navRibbon {
+    height:200px;
 }

@@ -23,7 +23,7 @@ TroxUI = Backbone.View.extend({
 
     _selectCellType: function(e){
         e.preventDefault();
-        var newType = $(e.target).data("type");
+        var newType = $(e.target).parent("a").data("type");
         if (newType == "icosa") return;
         dmaGlobals.lattice.set("freeformCellType", newType);
     },
@@ -35,16 +35,22 @@ TroxUI = Backbone.View.extend({
 
     render: function(){
         this.$el.html(this.template(_.extend(dmaGlobals.lattice.toJSON(), this.model.toJSON())));
-        var cellType = dmaGlobals.lattice.get("freeformCellType");
-        this.$el.find("[data-type='" + cellType + "']").addClass("selected");
     },
 
     template: _.template('\
         <div class="btn-toolbar">\
-              <a data-type="tetra" class="btn btn-primary troxCellButton" href="#">tetra</a>\
-              <a data-type="octa" class="btn btn-primary troxCellButton" href="#">octa</a>\
-              <a data-type="icosa" class="btn btn-primary troxCellButton" href="#">icosa</a>\
-              <a id="troxDeleteButton" class="btn btn-primary <% if (deleteMode){ %> selected<% } %>"><span class="fui-cross"></span></a>\
+              <a data-type="tetra" class="troxCellButton" href="#">\
+                <% if (freeformCellType == "tetra") { %><img src="assets/imgs/trox_highlighted_07.png">\
+                <% } else { %><img src="assets/imgs/trox_assets_07.png"><% } %></a>\
+              <a data-type="octa" class="troxCellButton" href="#">\
+                <% if (freeformCellType == "octa") { %><img src="assets/imgs/trox_highlighted_09.png">\
+                <% } else { %><img src="assets/imgs/trox_assets_09.png"><% } %></a>\
+              <a data-type="icosa" class="troxCellButton" href="#">\
+                <% if (freeformCellType == "icosa") { %><img src="assets/imgs/trox_highlighted_11.png">\
+                <% } else { %><img src="assets/imgs/trox_assets_11.png"><% } %></a>\
+              <a id="troxDeleteButton">\
+                <% if (deleteMode) { %><img src="assets/imgs/trox_highlighted_13.png">\
+                <% } else { %><img src="assets/imgs/trox_assets_13.png"><% } %></a>\
               <a class="btn btn-primary">Reset</a>\
         </div>\
         ')

@@ -11,14 +11,6 @@ TroxHeader = Backbone.View.extend({
 
     initialize: function(){
 
-        var $logo = $("#troxCBALogo");
-        $logo.mouseover(function(){
-            $logo.attr("src","assets/imgs/logo-active.png");
-        });
-        $logo.mouseout(function(){
-            $logo.attr("src","assets/imgs/logo.png");
-        });
-
     }
 
 });
