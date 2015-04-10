@@ -43,7 +43,6 @@ TroxUI = Backbone.View.extend({
     },
 
     _showResetModal: function(e){
-        console.log("here");
         e.preventDefault();
         $("#resetTroxModal").modal('show');
     },

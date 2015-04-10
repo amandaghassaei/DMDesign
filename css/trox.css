@@ -42,6 +42,17 @@ a:active {
     padding: 0 100px 20px 33px;
 }
 
+#resetTroxModal{
+    font-size: 24px;
+    text-align: center;
+}
+
+#resetTroxModal a{
+    margin: 14px 45px;
+    display: inline-block;
+    color: white;
+}
+
 .aboutTrox{
     display:inline-block;
 }
