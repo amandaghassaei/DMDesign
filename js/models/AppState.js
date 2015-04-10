@@ -243,42 +243,43 @@ AppState = Backbone.Model.extend({
             case 8://delete key - causes back nav in chrome, super annoying
                 e.preventDefault();
                 e.stopPropagation();
-            case 16://shift
-//                this.set("shift", state);
                 break;
+//            case 16://shift
+////                this.set("shift", state);
+//                break;
             case 68://d delete mode
                 this.set("deleteMode", state);
                 break;
-            case 69://e
-//                if (currentTab != "sketch") return;
-                this.set("extrudeMode", state);
-                break;
-            case 80://p part mode
-                var cellMode = this.get("cellMode");
-                if (cellMode == "part") this.set("cellMode", "cell");
-                else if (cellMode == "cell") this.set("cellMode", "part");
-                break;
-            case 83://s save
-                if (e.ctrlKey || e.metaKey){//command
-                    e.preventDefault();
-                    if (e.shiftKey){
-                        this.set("shift", false);
-                        $("#saveAsModel").modal("show");
-                    } else {
-                        dmaGlobals.appState.saveJSON();
-                    }
-                }
-                break;
-            case 79://o open
-                if (e.ctrlKey || e.metaKey){//command
-                    e.preventDefault();
-                    $("#jsonInput").click();
-                }
-                break;
-            case 32://space bar (play/pause simulation)
-                e.preventDefault();
-                if (state && this.get("currentTab") == "animate") this.set("stockSimulationPlaying", !this.get("stockSimulationPlaying"));
-                break;
+//            case 69://e
+////                if (currentTab != "sketch") return;
+//                this.set("extrudeMode", state);
+//                break;
+//            case 80://p part mode
+//                var cellMode = this.get("cellMode");
+//                if (cellMode == "part") this.set("cellMode", "cell");
+//                else if (cellMode == "cell") this.set("cellMode", "part");
+//                break;
+//            case 83://s save
+//                if (e.ctrlKey || e.metaKey){//command
+//                    e.preventDefault();
+//                    if (e.shiftKey){
+//                        this.set("shift", false);
+//                        $("#saveAsModel").modal("show");
+//                    } else {
+//                        dmaGlobals.appState.saveJSON();
+//                    }
+//                }
+//                break;
+//            case 79://o open
+//                if (e.ctrlKey || e.metaKey){//command
+//                    e.preventDefault();
+//                    $("#jsonInput").click();
+//                }
+//                break;
+//            case 32://space bar (play/pause simulation)
+//                e.preventDefault();
+//                if (state && this.get("currentTab") == "animate") this.set("stockSimulationPlaying", !this.get("stockSimulationPlaying"));
+//                break;
             default:
                 break;
         }
