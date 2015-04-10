@@ -4,13 +4,20 @@
 
 TroxHeader = Backbone.View.extend({
 
-    el: "#troxHeader",
+    el: "body",
 
     events: {
+        "click #troxMainLogo":                                            "_showAboutModal",
+        "click #moreInfoTrox":                                            "_showAboutModal"
     },
 
     initialize: function(){
 
+    },
+
+    _showAboutModal: function(e){
+        e.preventDefault();
+        $("#aboutTroxModal").modal('show');
     }
 
 });

@@ -1,32 +1,81 @@
-#template{
-    position: absolute;
-    bottom:0;
-}
-
 body{
     font-family: "Hanken-Light", Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
-@font-face {
-  font-family: "Hanken-Book";
-  src: url(../assets/fonts/Hanken-Book.ttf) format("truetype");
+a:link {
+    text-decoration: none;
+    color:white;
 }
+
+a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover {
+    text-decoration: none;
+    color:white;
+}
+
+a:active {
+    text-decoration: none;
+    color:white;
+}
+
 @font-face {
   font-family: "Hanken-Light";
   src: url(../assets/fonts/Hanken-Light.ttf) format("truetype");
 }
 
-#troxHeader {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0);
-    top:0;
-    left:0;
+.modal-content{
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 0;
+    color: white;
+    border: 0;
+}
+
+.modal-body>p{
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    padding: 0 100px 20px 33px;
+}
+
+.aboutTrox{
+    display:inline-block;
+}
+
+#moreInfoTrox{
+    color: black;
+    font-size: 24px;
+    margin: 14px 24px;
     z-index: 1;
+    position: absolute;
+    top:0;
+    right:0;
 }
 
 #troxMainLogo{
+    position:absolute;
+    z-index: 1;
+    top:0;
+    left:0;
+}
+
+#troxMainLogo>img{
     margin: 23px;
     width:45px;
+}
+
+.troxCellButton, #troxDeleteButton {
+    display: inline-block;
+    color: white;
+    font-size: 14px;
+}
+
+.troxCellButton:hover{
+    color: white;
 }
 
 .troxCellButton>img{
@@ -60,10 +109,10 @@ body{
     font-size: 36px;
 }
 
-.btn-toolbar{
+#navRibbon>.btn-toolbar{
     z-index: 1;
     position: relative;
-    padding-left: 44px;
+    margin: 0 200px 0 244px;
 }
 
 #troxReset{
@@ -75,8 +124,4 @@ body{
 
 .troxLogo{
     height:86px;
-}
-
-#threeContainer{
-    /*display:none;*/
 }

@@ -16,7 +16,7 @@ TroxUI = Backbone.View.extend({
 
     initialize: function(){
 
-        _.bindAll(this, "render");
+//        _.bindAll(this, "render");
 
         this.listenTo(this.model, "change:deleteMode", this.render);
         this.listenTo(dmaGlobals.lattice, "change:freeformCellType", this.render);
@@ -25,7 +25,9 @@ TroxUI = Backbone.View.extend({
 
     _selectCellType: function(e){
         e.preventDefault();
-        var newType = $(e.target).parent("a").data("type");
+        var $target = $(e.target);
+        if (!$(e.target).hasClass("troxCellButton")) $target = $($target.parent());
+        var newType = $target.data("type");
         if (newType == "icosa") return;
         dmaGlobals.lattice.set("freeformCellType", newType);
     },
@@ -41,6 +43,7 @@ TroxUI = Backbone.View.extend({
     },
 
     _showResetModal: function(e){
+        console.log("here");
         e.preventDefault();
         $("#resetTroxModal").modal('show');
     },
@@ -62,16 +65,24 @@ TroxUI = Backbone.View.extend({
         <div class="btn-toolbar">\
               <a data-type="tetra" class="troxCellButton" href="#">\
                 <img class="troxHighlight" src="assets/imgs/trox_highlighted_07.png">\
-                <img class="troxNoHighlight" src="assets/imgs/trox_assets_07.png"></a>\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_07.png">\
+                <br/><span>Tetra</span>\
+                </a>\
               <a data-type="octa" class="troxCellButton" href="#">\
                 <img class="troxHighlight" src="assets/imgs/trox_highlighted_09.png">\
-                <img class="troxNoHighlight" src="assets/imgs/trox_assets_09.png"></a>\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_09.png">\
+                <br/><span>Octa</span>\
+              </a>\
               <a data-type="icosa" class="troxCellButton" href="#">\
                 <img class="troxHighlight" src="assets/imgs/trox_highlighted_11.png">\
-                <img class="troxNoHighlight" src="assets/imgs/trox_assets_11.png"></a>\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_11.png">\
+                <br/><span>Icosa</span>\
+                </a>\
               <a id="troxDeleteButton" href="#">\
                 <img class="troxHighlight" src="assets/imgs/trox_highlighted_13.png">\
-                <img class="troxNoHighlight" src="assets/imgs/trox_assets_13.png"></a>\
+                <img class="troxNoHighlight" src="assets/imgs/trox_assets_13.png">\
+                <br/><span>Erase</span>\
+                </a>\
         </div>\
         <div id="troxFooter">\
             <a class="aboutTrox pull-left" href="#"><img class="troxLogo" src="assets/imgs/trox_assets_15.png"></a>\
