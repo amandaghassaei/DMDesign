@@ -16,7 +16,7 @@ Lattice = Backbone.Model.extend({
         numCells: 0,
 
         basePlane: null,//plane to build from
-        scale: 20,
+        scale: 60,
         highlighter: null,//highlights build-able surfaces
 
         //spacing for connectors/joints

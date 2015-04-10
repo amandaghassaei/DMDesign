@@ -34,12 +34,14 @@ ThreeView = Backbone.View.extend({
         this._saveHighlighter();//need a reference to the highlighter
 
         this.controls = new THREE.OrbitControls(this.model.camera, this.$el.get(0));
+        this.controls.minDistance = 0;
+        this.controls.maxDistance = 2500;
         this.controls.addEventListener('change', this.model.render);
 
         this.$el.append(this.model.domElement);//render only once
 
         this.model.render();
-//        this._animate();
+        this._animate();
     },
 
     ////////////////////////////////////////////////////////////////////////////////

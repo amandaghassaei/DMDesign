@@ -21,12 +21,12 @@ function ThreeModel(){
 
     function initialize(){
 
-        camera.position.x = 125;
-        camera.position.y = 100;
-        camera.position.z = 165;
+        camera.position.x = 0;
+        camera.position.y = 230;
+        camera.position.z = 35;
         camera.up.set(0,0,1);//set z axis as "up"
 
-        scene.fog = new THREE.FogExp2(0xcccccc, 0.000);
+        scene.fog = new THREE.FogExp2(0xffffff, 0.0004);
 
         // lights
         var light = new THREE.DirectionalLight(0xffffff);
