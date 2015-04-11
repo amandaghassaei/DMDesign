@@ -29,15 +29,15 @@ function ThreeModel(){
         scene.fog = new THREE.FogExp2(0xffffff, 0.0004);
 
         // lights
-        var light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(1, 1, 1);
-        light.castShadow = true;
-        scene.add(light);
-        light = new THREE.DirectionalLight(0xaaaaaa);
-        light.castShadow = true;
-        light.position.set(-1, -1, -1);
-        scene.add(light);
-        light = new THREE.AmbientLight(0x222222);
+//        var light = new THREE.DirectionalLight(0xffffff);
+//        light.position.set(1, 1, 1);
+//        light.castShadow = true;
+//        scene.add(light);
+//        light = new THREE.DirectionalLight(0xaaaaaa);
+//        light.castShadow = true;
+//        light.position.set(-1, -1, -1);
+//        scene.add(light);
+        light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
 
         // renderer

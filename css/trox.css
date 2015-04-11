@@ -1,6 +1,8 @@
 body{
     font-family: "Hanken-Light", Arial, Helvetica, sans-serif;
     text-decoration: none;
+    min-width: 860px;
+    position: relative;
 }
 
 a:link {
@@ -123,7 +125,7 @@ a:active {
 #navRibbon>.btn-toolbar{
     z-index: 1;
     position: relative;
-    margin-left: 44px;
+    margin-left: 70px;
     display: inline-block;
     left:auto;
     right:auto;
