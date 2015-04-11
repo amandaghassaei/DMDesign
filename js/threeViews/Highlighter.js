@@ -17,7 +17,7 @@ Highlighter = Backbone.View.extend({
                 side:THREE.DoubleSide,
                 transparent:true,
                 opacity:0.4,
-                color:0xffffff,
+                color:0x999999,
                 vertexColors:THREE.FaceColors
             }));
 
