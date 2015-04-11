@@ -39,7 +39,7 @@ ThreeView = Backbone.View.extend({
         this.controls.addEventListener('change', this._controlsChange);
 
         var light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z);
+        light.position.set(this.model.camera.position.x, this.model.camera.position.y, this.model.camera.position.z+20);
         this.model.sceneAdd(light);
         this.movingLight = light;
 
@@ -59,7 +59,7 @@ ThreeView = Backbone.View.extend({
     },
 
     _controlsChange: function(){
-        this.movingLight.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z+20);
+        this.movingLight.position.set(this.model.camera.position.x, this.model.camera.position.y, this.model.camera.position.z+20);
         this.model.render();
     },
 

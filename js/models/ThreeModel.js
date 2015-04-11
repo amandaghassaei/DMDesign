@@ -48,7 +48,7 @@ function ThreeModel(){
         light = new THREE.DirectionalLight(0xaaaaaa);
         light.position.set(-1, -1, -1);
         scene.add(light);
-        light = new THREE.AmbientLight(0xffffff);
+        var light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
 
         // renderer
