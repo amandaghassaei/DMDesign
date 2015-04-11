@@ -38,13 +38,13 @@
 
     var texture = THREE.ImageUtils.loadTexture( "assets/textures/paperSpecMap.jpg" );
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(4,4);
+    texture.repeat.set(5,5);
 
     var paperMaterial = new THREE.MeshPhongMaterial({
         map: skin,
         bumpMap:texture,
         color: new THREE.Color("#999999"),
-        bumpScale:0.2,
+        bumpScale:0.4,
         shininess:10,
         fog: false,
         shading:THREE.SmoothShading
