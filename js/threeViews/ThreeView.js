@@ -25,7 +25,7 @@ ThreeView = Backbone.View.extend({
 
         this.appState = options.appState;
 
-        _.bindAll(this, "_mouseMoved", "_animate");
+        _.bindAll(this, "_mouseMoved", "_animate", "_controlsChange");
 
         //bind events
         this.listenTo(this.appState, "change:deleteMode change:extrudeMode change:shift", this._setControlsEnabled);
@@ -36,7 +36,12 @@ ThreeView = Backbone.View.extend({
         this.controls = new THREE.OrbitControls(this.model.camera, this.$el.get(0));
         this.controls.minDistance = 0;
         this.controls.maxDistance = 2500;
-        this.controls.addEventListener('change', this.model.render);
+        this.controls.addEventListener('change', this._controlsChange);
+
+        var light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z);
+        this.model.sceneAdd(light);
+        this.movingLight = light;
 
         this.$el.append(this.model.domElement);//render only once
 
@@ -51,6 +56,11 @@ ThreeView = Backbone.View.extend({
     _animate: function(){
 //        requestAnimationFrame(this._animate);
 //        this.controls.update();
+    },
+
+    _controlsChange: function(){
+        this.movingLight.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z);
+        this.model.render();
     },
 
     _setControlsEnabled: function(){

@@ -23,7 +23,7 @@ function ThreeModel(){
 
         camera.position.x = 0;
         camera.position.y = 230;
-        camera.position.z = 35;
+        camera.position.z = 75;
         camera.up.set(0,0,1);//set z axis as "up"
 
         scene.fog = new THREE.FogExp2(0xffffff, 0.0004);
@@ -45,10 +45,10 @@ function ThreeModel(){
         var light = new THREE.DirectionalLight(color);
         light.position.set(0, 0, -300);
         scene.add(light);
-//        light = new THREE.DirectionalLight(0xaaaaaa);
-//        light.castShadow = true;
-//        light.position.set(-1, -1, -1);
-//        scene.add(light);
+        light = new THREE.DirectionalLight(0xaaaaaa);
+        light.castShadow = true;
+        light.position.set(-1, -1, -1);
+        scene.add(light);
         light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
 
