@@ -58,7 +58,7 @@
 
         tetraTrox = new THREE.Geometry().fromBufferGeometry(geometry);
         tetraTrox.computeBoundingBox();
-        var unitScale = 1/3.25;
+        var unitScale = 1/3.75;
         tetraTrox.applyMatrix(new THREE.Matrix4().makeScale(unitScale, unitScale, unitScale));
         tetraTrox.applyMatrix(new THREE.Matrix4().makeRotationZ(Math.PI));
         assignUVs(tetraTrox);
