@@ -39,12 +39,26 @@ TroxUI = Backbone.View.extend({
 
     _showAboutModal: function(e){
         e.preventDefault();
-        $("#aboutTroxModal").modal('show');
+        $("#aboutTroxModal").modal('show').css({
+            'margin-top': function () {
+                return -500;//if these change, don't forget to change TroxHeader
+            },
+            'margin-left': function () {
+                return -600;
+            }
+        });
     },
 
     _showResetModal: function(e){
         e.preventDefault();
-        $("#resetTroxModal").modal('show');
+        $("#resetTroxModal").modal('show').css({
+            'margin-top': function () {
+                return -200;//if these change, don't forget to change TroxUI
+            },
+            'margin-left': function () {
+                return -300;
+            }
+        });
     },
 
     render: function(){

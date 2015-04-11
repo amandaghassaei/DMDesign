@@ -30,6 +30,20 @@ a:active {
   src: url(../assets/fonts/Hanken-Light.ttf) format("truetype");
 }
 
+.modal-dialog {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+.modal-footer {
+    margin-top: 0;
+}
+
 .modal-content{
     background-color: rgba(0,0,0,0.7);
     border-radius: 0;

@@ -140,6 +140,7 @@ Lattice = Backbone.Model.extend({
         this.set("numCells", 0);
         if (this.get("basePlane")) this.get("basePlane").set("zIndex", 0);
         dmaGlobals.three.render();
+        dmaGlobals.appState.set("deleteMode", false);
     },
 
     calculateBoundingBox: function(){

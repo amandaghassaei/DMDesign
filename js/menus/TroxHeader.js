@@ -18,7 +18,15 @@ TroxHeader = Backbone.View.extend({
 
     _showAboutModal: function(e){
         e.preventDefault();
-        $("#aboutTroxModal").modal('show');
+        console.log($($("#aboutTroxModal .modal-body")[0]).outerWidth());
+        $("#aboutTroxModal").modal('show').css({
+            'margin-top': function () {
+                return -500;//if these change, don't forget to change TroxUI
+            },
+            'margin-left': function () {
+                return -600;
+            }
+        });
     },
 
     _clearCells: function(e){
