@@ -64,6 +64,8 @@
 
     DMATetraTroxPart.prototype._makeMeshForType = function(){
         var mesh = new THREE.Mesh(tetraTrox, paperMaterial);
+        mesh.castShadow = true;
+        mesh.receiveShadow = false;
         mesh.myPart = this;//need a ref back to this part
         return mesh;
     };
@@ -108,6 +110,8 @@
 
     DMAOctaTroxPart.prototype._makeMeshForType = function(){
         var mesh = new THREE.Mesh(octaTrox, paperMaterial);
+        mesh.castShadow = true;
+        mesh.receiveShadow = false;
         mesh.myPart = this;//need a ref back to this part
         return mesh;
     };
