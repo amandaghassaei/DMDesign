@@ -46,7 +46,6 @@ function ThreeModel(){
         light.position.set(0, 0, -300);
         scene.add(light);
         light = new THREE.DirectionalLight(0xaaaaaa);
-        light.castShadow = true;
         light.position.set(-1, -1, -1);
         scene.add(light);
         light = new THREE.AmbientLight(0xffffff);
@@ -55,8 +54,6 @@ function ThreeModel(){
         // renderer
         renderer.setClearColor(scene.fog.color, 1);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.shadowMapEnabled = true;
-        renderer.shadowMapType = THREE.PCFSoftShadowMap;
 
         window.addEventListener('resize', onWindowResize, false);
     }

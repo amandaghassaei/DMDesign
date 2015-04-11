@@ -59,7 +59,7 @@ ThreeView = Backbone.View.extend({
     },
 
     _controlsChange: function(){
-//        this.movingLight.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z);
+        this.movingLight.position.set(this.model.camera.x, this.model.camera.y, this.model.camera.z+20);
         this.model.render();
     },
 
