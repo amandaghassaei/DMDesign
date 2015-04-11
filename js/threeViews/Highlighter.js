@@ -11,6 +11,11 @@ Highlighter = Backbone.View.extend({
 
     initialize: function(options){
 
+        var isIpad = false;
+        var ua = navigator.userAgent;
+        isIpad = ua.match(/iPad/i) != null || /iPad/i.test(ua) || /iPhone OS 3_1_2/i.test(ua);
+        if (isIpad) console.log("ipad detected");
+
         var geometry = this._makeGeometry();
         this.mesh = new THREE.Mesh(geometry,
             new THREE.MeshBasicMaterial({
@@ -21,6 +26,7 @@ Highlighter = Backbone.View.extend({
                 vertexColors:THREE.FaceColors
             }));
 
+        if (isIpad) this.mesh.material.opacity = 0.0;
         dmaGlobals.three.sceneAdd(this.mesh, null);
         this.updateScale(options.scale);
         this.hide();
