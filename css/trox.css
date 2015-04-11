@@ -108,6 +108,7 @@ a:active {
 .troxCellButton>img{
     height:104px;
     margin: 0 22px;
+    margin-top: 20px;
 }
 
 .troxHighlight{
@@ -143,6 +144,7 @@ a:active {
     display: inline-block;
     left:auto;
     right:auto;
+    top:-20px;
 }
 
 #troxReset{
