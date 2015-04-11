@@ -69,6 +69,7 @@ ThreeView = Backbone.View.extend({
     _mouseUp: function(){
         this.mouseIsDown = false;
         this.highlighter.addRemoveVoxel(!this.appState.get("deleteMode"));
+        if (dmaGlobals.lattice.get("numCells") == 0) dmaGlobals.appState.set("deleteMode", false);
     },
 
     _mouseDown: function(){

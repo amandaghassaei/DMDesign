@@ -125,7 +125,6 @@ Lattice = Backbone.Model.extend({
         //todo shrink cells matrix if needed
 
         this.set("numCells", this.get("numCells")-1);
-        if (this.get("numCells") == 0) dmaGlobals.appState.set("deleteMode", false);
         dmaGlobals.three.render();
     },
 
