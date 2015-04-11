@@ -83,8 +83,8 @@ TroxUI = Backbone.View.extend({
         highlighted.children(".troxNoHighlight").hide();
         if (this.model.get("deleteMode")){
             var deleteButton = $("#troxDeleteButton");
-            deleteButton.children(".troxHighlight").show();
-            deleteButton.children(".troxNoHighlight").hide();
+            deleteButton.children(".troxDeleteHighlight").show();
+            deleteButton.children(".troxDeleteNoHighlight").hide();
         }
     },
 
@@ -106,8 +106,8 @@ TroxUI = Backbone.View.extend({
                 <br/><span>Icosa</span>\
                 </a>\
               <a id="troxDeleteButton" href="#">\
-                <img class="troxHighlight" src="assets/imgs/trox_highlighted_13.png">\
-                <img class="troxNoHighlight" src="assets/imgs/trox_assets_13.png">\
+                <img class="troxDeleteHighlight" src="assets/imgs/trox_highlighted_13.png">\
+                <img class="troxDeleteNoHighlight" src="assets/imgs/trox_assets_13.png">\
                 <br/><span>Erase</span>\
                 </a>\
         </div>\

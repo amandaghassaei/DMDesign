@@ -111,7 +111,7 @@ a:active {
     margin-top: 20px;
 }
 
-.troxHighlight{
+.troxHighlight, .troxDeleteHighlight{
     display:none;
 }
 
