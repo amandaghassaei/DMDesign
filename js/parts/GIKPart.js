@@ -10,7 +10,6 @@ define(['underscore', 'stlLoader', 'part', 'bin!gikPartSTL', 'bin!gikEndPartSTL'
     var unitGeoEnd = preProcessGeo(loader.parse(gikEndPart));
 
     function preProcessGeo(geo){
-        console.log(geo.computeBoundingBox());
         var unitScale = 1/(1.2699999809265137);
         geo.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI/2));
         geo.applyMatrix(new THREE.Matrix4().makeScale(unitScale, unitScale, unitScale));
