@@ -7,14 +7,10 @@ define(['underscore', 'stlLoader', 'part', 'bin!gikPartSTL', 'bin!gikEndPartSTL'
 
     var loader = new THREE.STLLoader();
     var unitGeo = preProcessGeo(loader.parse(gikPart));
-    var unitGeoEnd = preProcessGeo(loader.parse(gikEndPart), true);
+    var unitGeoEnd = preProcessGeo(loader.parse(gikEndPart));
 
-    function preProcessGeo(geo, endPart){
-        geo.computeBoundingBox();
-        if (endPart) geo.applyMatrix(new THREE.Matrix4().makeTranslation(-(geo.boundingBox.min.x+0.5),
-            -(geo.boundingBox.min.y+geo.boundingBox.max.y)/2, -(geo.boundingBox.min.z+geo.boundingBox.max.z)/2));
-        else geo.applyMatrix(new THREE.Matrix4().makeTranslation(-(geo.boundingBox.min.x+geo.boundingBox.max.x)/2,
-            -(geo.boundingBox.min.y+geo.boundingBox.max.y)/2, -(geo.boundingBox.min.z+geo.boundingBox.max.z)/2));
+    function preProcessGeo(geo){
+        console.log(geo.computeBoundingBox());
         var unitScale = 1/(1.2699999809265137);
         geo.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI/2));
         geo.applyMatrix(new THREE.Matrix4().makeScale(unitScale, unitScale, unitScale));
