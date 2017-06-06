@@ -100,9 +100,12 @@ ThreeView = Backbone.View.extend({
         this.mouseProjection.setFromCamera(vector, this.model.camera);
 
         var objsToIntersect = this.model.cells.concat(this.model.basePlane);
-        if (this.highlighter.isVisible()) objsToIntersect = objsToIntersect.concat(this.highlighter.mesh);
+        if (this.highlighter.isVisible()) {
+          objsToIntersect = objsToIntersect.concat(this.highlighter.mesh);
+        }
         var intersections = this.mouseProjection.intersectObjects(objsToIntersect, false);
         if (intersections.length == 0) {//no intersections
+            // TODO: instead of not highlighting, can we look for the nearest intersection?
             this.highlighter.setNothingHighlighted();
             return;
         }

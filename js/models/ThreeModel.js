@@ -29,7 +29,7 @@ function ThreeModel(){
         scene.fog = new THREE.FogExp2(0xffffff, 0.0004);
 
 //        lights
-        var color = 0x888888;
+        var color = 0x000000;
         var light = new THREE.DirectionalLight(color);
         light.position.set(0, 300, 0);
         scene.add(light);
