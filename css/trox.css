@@ -147,6 +147,10 @@ a:active {
     top:-20px;
 }
 
+#troxColors {
+  color: #FFFF00;
+}
+
 #troxReset{
     float: right;
     margin-top: 17px;

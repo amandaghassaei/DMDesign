@@ -32,18 +32,18 @@
 
     var tetraTrox;
 
-    var skin = THREE.ImageUtils.loadTexture('assets/textures/blackPaper.png');
+    var skin = THREE.ImageUtils.loadTexture('assets/textures/bluePaper.png'); // color is imported
 	skin.wrapS = skin.wrapT = THREE.RepeatWrapping;
     skin.repeat.set(4,4);
 
-    var texture = THREE.ImageUtils.loadTexture( "assets/textures/paperSpecMap.jpg" );
+    var texture = THREE.ImageUtils.loadTexture( "assets/textures/paperSpecMap2.jpg" );
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set(5,5);
 
     var paperMaterial = new THREE.MeshPhongMaterial({
         map: skin,
         bumpMap:texture,
-        color: new THREE.Color("#999999"),
+        color: new THREE.Color("#999999"),  // tint the color of the png loaded for material
         bumpScale:0.4,
         shininess:10,
         fog: false,
